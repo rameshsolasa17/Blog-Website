@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 app.set("views", path.join(__dirname, "views"));
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use('/', express.static("public", { maxAge: 10000 }))
+app.use('/', express.static( path.join(__dirname, "public"), { maxAge: 10000 }))
 
 mongoose.connect("mongodb+srv://rameshsolasa2001:rameshsolasa@cluster0.tdxhysz.mongodb.net/?retryWrites=true&w=majority", {
       useUnifiedTopology: true,
